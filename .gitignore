@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP
+/vendor/
+composer.lock
+
+# MySQL data (永続化ディレクトリ)
+mysql_data/
+
+# Docker
+*.log
+.env
+
+# VSCode
+.vscode/
+
+# その他
+*.swp
+*.swo
+*~

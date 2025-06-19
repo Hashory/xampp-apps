@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    container_name: bbs-web
+    volumes:
+      - ./app:/var/www/html
+    working_dir: /var/www/html/bbs
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/bbs
+    ports:
+      - "8080:80"
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    container_name: bbs-db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bbs
+      MYSQL_USER: bbsuser
+      MYSQL_PASSWORD: bbspass
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
