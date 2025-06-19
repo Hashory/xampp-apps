@@ -29,8 +29,10 @@ $posts = $pdo->query('SELECT * FROM sns_posts ORDER BY id DESC')->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>SNS 投稿一覧</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div class="container">
     <h1>SNS 投稿一覧</h1>
     <form method="post">
         <input type="text" name="content" placeholder="新しい投稿" required>
@@ -47,5 +49,6 @@ $posts = $pdo->query('SELECT * FROM sns_posts ORDER BY id DESC')->fetchAll();
         <?php endforeach; ?>
     </ul>
     <p><a href="/">アプリ一覧に戻る</a></p>
+</div>
 </body>
 </html>

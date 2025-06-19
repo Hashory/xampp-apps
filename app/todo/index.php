@@ -48,8 +48,10 @@ $todos = $pdo->query('SELECT * FROM todos ORDER BY id DESC')->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>TODOリスト</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div class="container">
     <h1>TODOリスト</h1>
     <form method="post">
         <input type="text" name="task" placeholder="新しいタスク" required>
@@ -72,5 +74,6 @@ $todos = $pdo->query('SELECT * FROM todos ORDER BY id DESC')->fetchAll();
         <?php endforeach; ?>
     </ul>
     <p><a href="/">アプリ一覧に戻る</a></p>
+</div>
 </body>
 </html>

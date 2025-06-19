@@ -32,8 +32,10 @@ $posts = $pdo->query('SELECT * FROM posts ORDER BY id DESC')->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>シンプル掲示板</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div class="container">
     <h1>シンプル掲示板</h1>
     <form method="post">
         名前: <input type="text" name="name" required>
@@ -52,5 +54,6 @@ $posts = $pdo->query('SELECT * FROM posts ORDER BY id DESC')->fetchAll();
         <hr>
     <?php endforeach; ?>
     <p><a href="/">ポータルに戻る</a></p>
+</div>
 </body>
 </html>

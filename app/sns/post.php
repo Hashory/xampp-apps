@@ -43,8 +43,10 @@ $replies = $stmt->fetchAll();
 <head>
     <meta charset="UTF-8">
     <title>投稿 #<?php echo $post['id']; ?> の詳細</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<div class="container">
     <h1>投稿 #<?php echo $post['id']; ?> の詳細</h1>
     <div>
         <strong>投稿内容:</strong><br>
@@ -63,5 +65,6 @@ $replies = $stmt->fetchAll();
         <?php endforeach; ?>
     </ul>
     <p><a href="list.php">投稿一覧に戻る</a></p>
+</div>
 </body>
 </html>
